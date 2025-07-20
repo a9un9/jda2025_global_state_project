@@ -6,6 +6,45 @@ import { addFriend } from '@/store/friendSlice'
 import type { AppDispatch } from '@/store'
 import Link from 'next/link'
 
+const styles: { [key: string]: React.CSSProperties } = {
+  container: {
+    padding: '40px 20px',
+    maxWidth: '600px',
+    margin: '0 auto',
+    fontFamily: 'Segoe UI, sans-serif',
+    color: '#333',
+  },
+  title: {
+    fontSize: '2rem',
+    marginBottom: '30px',
+  },
+  formGroup: {
+    display: 'flex',
+    gap: '10px',
+  },
+  input: {
+    flex: 1,
+    padding: '10px',
+    fontSize: '1rem',
+    borderRadius: '6px',
+    border: '1px solid #ccc',
+    outline: 'none',
+  },
+  button: {
+    padding: '10px 18px',
+    backgroundColor: '#4CAF50',
+    color: '#fff',
+    fontWeight: 500,
+    border: 'none',
+    borderRadius: '6px',
+    cursor: 'pointer',
+  },
+  backLink: {
+    marginTop: '30px',
+    display: 'inline-block',
+  },
+}
+
 export default function TambahPage() {
   const [name, setName] = useState('')
   const dispatch = useDispatch<AppDispatch>()
@@ -34,47 +73,8 @@ export default function TambahPage() {
       </div>
 
       <p style={styles.backLink}>
-        <Link href="/">← Kembali ke daftar</Link>
+        <Link href="/" style={{ color: '#0070f3', textDecoration: 'none' }}>← Kembali ke daftar</Link>
       </p>
     </main>
   )
-}
-
-const styles: { [key: string]: React.CSSProperties } = {
-  container: {
-    padding: '40px 20px',
-    maxWidth: '600px',
-    margin: '0 auto',
-    fontFamily: 'Segoe UI, sans-serif',
-    color: '#333',
-  },
-  title: {
-    fontSize: '2rem',
-    marginBottom: '30px',
-  },
-  formGroup: {
-    display: 'flex',
-    gap: '10px',
-  },
-  input: {
-    flex: 1,
-    padding: '10px',
-    fontSize: '1rem',
-    borderRadius: '6px',
-    border: '1px solid #ccc',
-    outline: 'none',
-  },
-  button: {
-    padding: '10px 18px',
-    backgroundColor: '#0070f3',
-    color: '#fff',
-    fontWeight: 500,
-    border: 'none',
-    borderRadius: '6px',
-    cursor: 'pointer',
-  },
-  backLink: {
-    marginTop: '30px',
-    display: 'inline-block',
-  },
 }
